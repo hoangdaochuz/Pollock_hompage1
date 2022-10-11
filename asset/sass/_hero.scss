@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: 80%;
+    z-index: 0;
     position: absolute;
     top: 100px;
     left: 51px;
@@ -20,6 +21,8 @@
     padding-top: 80px;
     display: flex;
     flex-direction:row-reverse;
+    position: relative;
+    // margin-bottom: 60px;
 }
 
 .hero-img-container{
@@ -39,6 +42,7 @@
     padding-bottom: 296px;
     max-width: 770px;
     position: relative;
+    z-index: 1;
 }
 
 .hero-title{
@@ -65,11 +69,13 @@
     display: flex;
     gap: 0 10px;
     padding-top: 70px;
+    padding-left: 3px;
 }
 
 .hero-guide{
     display: flex;
     align-items: center;
+    // z-index: 1;
 }
 .hero-guide-btn-wrap{
     background-color: #fff;
@@ -79,15 +85,28 @@
     display: flex;
     align-items: center;
     justify-content:center;
+    // box-shadow: 0 0 5px 3px #ccc;
+    transform: translateY(0);
+    transition: all 0.3s linear;
+    
+}
+
+.hero-guide-btn-wrap:hover{
     box-shadow: 0 0 5px 3px #ccc;
     cursor: pointer;
-    
+    transform: translateY(-5px);
 }
 .herro-btn{
     display: inline-flex;
     align-items: center;
+    transform: translateY(0);
+    transition:all 0.3s linear;
 
+}
 
+.herro-btn:hover{
+    box-shadow: 0 0 5px 3px #ccc;
+    transform: translateY(-5px);
 }
 .hero-guide-title{
     padding-left: 7px;
@@ -102,17 +121,34 @@
     width:80px;
     height:80px;
     border-radius:50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    // display: inline-flex;
+    // justify-content: center;
+    // align-items: center;
     position: absolute;
     bottom: -40px;
     left: 45%;
     cursor: pointer;
+    // margin-bottom: 20px;
+    transform: translateY(0);
+    transition: all 0.3s linear;
+    z-index: 1;
+
+}
+
+.hero-scroll:hover{
+    box-shadow: 0 0 5px 3px #ccc;
+    transform: translateY(-5px);
 }
 .hero-scroll-btn{
     width:24px;
     height:24px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width:1023px){
@@ -157,11 +193,23 @@
     .hero-content{
         padding-left: 20px;
         padding-top:50px;
-        padding-bottom: 50px;
+        padding-bottom: 100px;
     }
     .hero-img-container,
     .hero-img{
         padding-bottom: 50px;
     }
 
+}
+
+@media screen and (min-width: 374px) and ( max-width:767px){
+    .hero-img-container{
+        align-items: flex-start;
+        // float: left;
+        width: 100%;
+    }    
+
+    .hero-content{
+        padding-top:0px;
+    }
 }

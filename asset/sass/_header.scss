@@ -10,9 +10,10 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
 }
 
-.container{
+.container-header{
     max-width: 1170px;
 
     display: flex;
@@ -26,7 +27,7 @@
     display: inline-block;
 
 }
-.logo-img{
+.logo-img-header{
     max-width:176px;
     width: 176px;
     height:44px; 
