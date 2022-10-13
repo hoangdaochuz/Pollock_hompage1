@@ -24,8 +24,32 @@
 .menu-item{
     font-size: 15px;
     line-height:calc(24 / 15);
+    position: relative;
 }
 
+
+
+.menu-item:hover .menu-item-link{
+    color: #2D3958;
+}
+
+.menu-item::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background-color:#34C635;
+    bottom: -3px;
+    left: auto;
+    right: 0;
+    transition:all 0.5s ease;
+}
+
+.menu-item:hover.menu-item::after{
+    width: 100%;
+    left: 0;
+    right: auto;
+}
 
 .menu-item-link{
     color: #7B88A8;
@@ -95,7 +119,15 @@
 .header--auth{
     display: flex;
     align-items: center;
+    transform: translateY(0);
+    transition: all 0.3s linear;
 }
+
+.header--auth:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 3px 3px #ccc;
+}
+
 
 .togle-btn{
     width: 20px;

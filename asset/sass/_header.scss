@@ -48,5 +48,11 @@
         width: 100%;
         justify-content:space-around;
     }
-    
+
+    .header-logo{
+        padding-left: 40px;
+    }
+    .togle-btn{
+        transform: translateX(-40px);
+    }
 }
